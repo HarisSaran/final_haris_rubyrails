@@ -1,4 +1,4 @@
 class ProducerCompany < ApplicationRecord
-  # has_many :tools
+  has_many :tools
   validates :name, presence: true, uniqueness: true
 end
