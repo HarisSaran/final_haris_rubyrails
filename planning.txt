@@ -1,0 +1,42 @@
+Project plan
+DATA:Name,Type,Producer,Price,Amount,Description, Quantity   (Image is added through active admin)
+
+
+
+
+Tool     rails g model Tool name:string description:text price:decimal quantity:integer producer_company:references
+id, name, description, price, quantity, producer_id,
+
+Producer_Company (1 to many)         rails g model Producer name:string
+Id, name
+
+Tool_type (joiner)
+Toold_id, producer_id
+
+Type  (Many to Many with tools)
+Id, name (eg concrete, wood, exetra..)
+
+
+
+
+
+purchase
+id
+tool_id
+order_id
+quantity
+
+Order
+Id
+Order_time
+User_id
+Subtotal
+Total
+Shipping_address
+Order_number
+
+User
+Id
+user_name
+password
+shipping_address
