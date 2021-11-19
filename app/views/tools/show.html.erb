@@ -1,4 +1,66 @@
-<h1>Tools#show</h1>
-<p>Find me in app/views/tools/show.html.erb</p>
+<%# <h1>Tools#show</h1>
+<p>Find me in app/views/tools/show.html.erb</p> %>
 
-<h2> <%= @tool.name %> </h2>
+<div class="container is-max-desktop">
+  <div class="notification white-ter	">
+
+  <div class="tile is-parent">
+        <article class="tile is-child notification has-background-grey-light">
+
+<h2 class="title is-2"> <%= @tool.name %> </h2>
+
+
+<article class="message is-dark">
+  <div class="message-header has-background-warning-dark">
+  <p>Tool Description</p>
+  </div>
+  <div class="message-body">
+  <%= @tool.description%>
+  </div>
+</article>
+
+<p> <strong>Quantity Remaining:</strong> <%= @tool.quantity %> <strong>/150</strong> </p>
+<progress class="progress " value="<%= @tool.quantity %>" max=150>
+<p> Quantity Remaining </p>
+ <%= @tool.quantity %>
+ </progress>
+
+ <p>
+  <strong> Quantity: </strong>
+  <%= @tool.quantity %>
+ </p>
+
+ <p>
+  <strong> Price: $</strong>
+  <%= @tool.price %>
+ </p>
+
+<p>
+  <strong> Brand: </strong>
+  <%= link_to @tool.producer_company.name, @tool.producer_company %>
+</p>
+
+  </div>
+  <figure class="media-left">
+    <p class="image is-64x64">
+      <img src="https://www.pikpng.com/pngl/m/150-1501872_100-money-back-guarantee-circle-clipart.png">
+    </p>
+  </figure>
+  <div class="media-content">
+    <div class="content">
+      <p>
+        <strong>The Famouse 100 Year Garuntee!</strong> <small>Scott 100</small>
+        <br>
+        This product comes with Scotts 100 year garuntee or your money back!
+      </p>
+      </article>
+      </div>
+    </div>
+</div>
+
+
+          <%# <p class="title">Middle tile</p>
+          <p class="subtitle">With an image</p>
+          <figure class="image is-4by3">
+            <img src="https://bulma.io/images/placeholders/640x480.png">
+          </figure> %>
