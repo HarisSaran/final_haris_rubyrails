@@ -5,3 +5,39 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require "csv"
+
+Tool.delete_all
+ProducerCompany.delete_all
+
+filename = Rails.root.join("db/tools.csv")
+
+puts "Tools from csv are #{filename}"
+csv_data = File.read(filename)
+tools = CSV.parse(csv_data, headers: true, encoding: "utf-8")
+
+tools.each do |m|
+  # puts m["name"]
+  producer_company = ProducerCompany.find_or_create_by(name: m["producer"])
+
+  if producer_company && producer_company.valid?
+    # create tool here
+    tool = producer_company.tools.create(
+      name:        m["name"],
+      description: m["description"],
+      price:       m["price"],
+      quantity:    m["amount"]
+    )
+    puts "Invalid tool #{m['name']}" unless tool&.valid?
+
+    # name:string description:text price:decimal quantity:integer producer_company:references
+    # name,type,producer,price,amount,description
+
+  else
+    puts "Not a valid producer company, #{m['producer']} for tool #{m['name']}"
+  end
+end
+
+puts "created Producer Companies #{ProducerCompany.count}"
+puts "created Tools : #{Tool.count}"

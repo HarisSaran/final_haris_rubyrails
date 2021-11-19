@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_19_012817) do
+ActiveRecord::Schema.define(version: 2021_11_19_013242) do
 
   create_table "producer_companies", force: :cascade do |t|
     t.string "name"
@@ -18,4 +18,16 @@ ActiveRecord::Schema.define(version: 2021_11_19_012817) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "tools", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.decimal "price"
+    t.integer "quantity"
+    t.integer "producer_company_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["producer_company_id"], name: "index_tools_on_producer_company_id"
+  end
+
+  add_foreign_key "tools", "producer_companies"
 end
