@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  # get 'home/index'
   # get 'tools/index'
   # get 'tools/show'
   # get 'producer_companies/index'
   # get 'producer_companies/show'
 
+  root to: "home#index"
   resources :tools, only: %i[index show]
   resources :producer_companies, only: %i[index show]
 

@@ -1,0 +1,24 @@
+
+<div class="columns is-half">
+  <div class="column">
+    <h2 class="title is-2"> Best Selling Tools </h2>
+    <ol class="ml-5">
+      <% @tools.each do | tool | %>
+              <div class="card margin-bottom mb-6">
+                <div class="card-content">
+                    <li>
+                      <%= link_to tool.name, tool %>
+                      <em>(<%= tool.producer_company.name %>) </em>
+                    </li>
+                  </div>
+              </div>
+      <% end %>
+    </ol>
+  </div>
+
+  <div class="column is-half">
+     <h2 class="title is-2"> Top Brands </h2>
+  </div>
+</div>
+
+
