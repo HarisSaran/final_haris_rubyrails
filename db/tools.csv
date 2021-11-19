@@ -1,0 +1,12 @@
+name,type,producer,price,amount,description
+Wrench,Plumbing,Dewalt,6.25,100,Wrench also called spanner  tool  usually operated by hand for tightening bolts and nuts
+Hammer,WoodWork,Ridgid,15.5,100,A hammer is a tool that consists of a heavy piece of metal at the end of a handle  It is used  for example  to hit nails into  wood or a wall or to break things into pieces
+Saw,"Tile, Plumbing",Milwakee,330,100,A saw is a tool consisting of a tough blade  wire  or chain with a hard toothed edge  It is used to cut through material  very often wood though sometimes metal or stone
+Drill,Concrete,Makita,130,100,A drill is a tool primarily used for making round holes or driving fasteners  It is fitted with a bit  either a drill or driver  depending on application  secured by a chuck
+Wet & Dry Vacuume,"Flooring, Plumbing",Dewalt,85,100,Wet and dry vacuums are designed for the removal of dry dirt and debris as well as liquid spills  Waste is sucked into a bucket where solids and liquids are separated for easy disposal
+Welder,Plumbing,Dewalt,299,100,Standard supplies consist of a welding machine  safety equipment such as a welding helmet  mask  gloves  and other accessories like clamps hammers adjustable wrenches  and MIG pliers
+Sander,"Painting, WoordWork",Ridgid,48.99,100,Portable power tool used for smoothing  polishing  or cleaning a surface  as of wood  plastic  or metal  Sanders are also used to roughen surfaces in preparation for finishing
+Tape Measurer,"Electrical, WoodWork",Makita,7.99,100,A long  thin piece of plastic  cloth  or metal that is marked with units of length  such as inches or centimeters  and that is used for measuring things
+Chainsaw,"Concrete, WoodWork",Makita,299.99,100,A chainsaw is a gas  hydraulic  or electric powered saw with a loop of chain that is pulled around a bar at a high speed
+Work Lights,"Plumbing, WoodWork, Tile, Concrete, Flooring, Electrical",Milwakee,104.99,100,A worklight is a high intensity light fixture which is used to illuminate the stage for the benefit of technicians
+Table Saw,"Flooring, Plumbing",Ridgid,460.98,100,A tool  consisting of a circular saw blade  mounted on an arbor  that is driven by an electric motor  either directly  by belt  or by gears
