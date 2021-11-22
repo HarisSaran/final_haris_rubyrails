@@ -19,16 +19,11 @@
   <div class="column is-half">
      <h2 class="title is-2"> Top 3 Brands </h2>
      <ol class="ml-5">
-      <% @producer_companies.each do | producer_company | %>
-              <div class="card margin-bottom mb-6 margin-right mb-6">
-                <div class="card-content">
-                    <li>
-                      <%= link_to producer_company.name, producer_company %>
-                      <em>(<%= pluralize producer_company.tool_count, "Product" %>) </em>
-                    </li>
-                  </div>
-              </div>
-      <% end %>
+              <%# <div class="card margin-bottom mb-6 margin-right mb-6">
+                <div class="card-content"> %>
+                    <%= render @producer_companies %>
+                  <%# </div>
+              </div> %>
     </ol>
   </div>
 </div>
