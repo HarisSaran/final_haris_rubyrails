@@ -1,10 +1,6 @@
 class ProducerCompaniesController < ApplicationController
   def index
-    @producer_companies = ProducerCompany.select("producer_companies.*")
-                                         .select("COUNT(producer_companies.id) as tool_count")
-                                         .left_joins(:tools)
-                                         .group("producer_companies.id")
-                                         .order("tool_count DESC")
+    @producer_companies = ProducerCompany.ordered_by_tools
   end
 
   def show
