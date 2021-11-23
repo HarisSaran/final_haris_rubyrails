@@ -27,6 +27,12 @@
 
       <%= yield %>
 
+      <% if controller_name == 'home' %>
+        <%= render partial: 'common/scotts_fav'%>
+      <% else %>
+        <%= render partial: 'common/footer' %>
+      <% end %>
+
       </section>
     </section>
   </body>
