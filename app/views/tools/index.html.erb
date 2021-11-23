@@ -1,5 +1,6 @@
 
 <h2 class="title is-2"> Buy Some Tools! </h2>
 
-<%= render @tools %>
+<%# <%= render @tools %>
+<%= render partial: @tools, locals: {show_link: true} %>
 

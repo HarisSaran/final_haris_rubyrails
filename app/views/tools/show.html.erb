@@ -2,4 +2,5 @@
 <p>Find me in app/views/tools/show.html.erb</p> %>
 <% content_for(:html_title) { @tool.name} %>
 
-<%= render @tool %>
+<%# <%= render @tool %>
+<%= render partial: @tool, locals: {show_link: false} %>
