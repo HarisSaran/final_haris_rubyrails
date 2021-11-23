@@ -1,13 +1,5 @@
-<h1>Tools#index</h1>
-<p>Find me in app/views/tools/index.html.erb</p>
 
 <h2 class="title is-2"> Buy Some Tools! </h2>
 
+<%= render @tools %>
 
-<ol>
-<% @tools.each do |tool| %>
-  <li>
-    <%= link_to tool.name, tool%> Made By: <%= link_to tool.producer_company.name, tool.producer_company %>
-  </li>
-<% end %>
-</ol>
