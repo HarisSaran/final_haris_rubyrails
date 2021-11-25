@@ -1,1 +1,23 @@
 <h2 class="title is-2"> <%= @producer_company.name %> </h2>
+
+<p class='mb-5 box'>
+  <%= @producer_company.name%> Makes <%= @producer_company.tools.count %> different Tools.
+</p>
+
+<h3 class='title is-3 box'> Tools made by <%= @producer_company.name%></h3>
+
+
+<ul>
+  <%# we can also use render partial for producer_company here for a different look %>
+    <% @producer_company.tools.each do |tool|%>
+      <div class="card margin-bottom mb-6 margin-right mb-6">
+        <div class="card-content">
+
+            <li> There are <%= tool.quantity %>, <%= link_to tool.name, tool %>'s Available </li>
+
+            <%# (<= pluralize publisher_company.game_count, "Best Game"> Best Games   find in views>home>index) %>
+       </div>
+      </div>
+    <% end %>
+
+  </ul>
