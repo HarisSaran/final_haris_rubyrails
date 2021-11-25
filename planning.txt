@@ -10,7 +10,7 @@ id, name, description, price, quantity, producer_id,
 Producer_Company (1 to many)         rails g model Producer name:string
 Id, name
 
-Tool_type (joiner)
+ToolType (joiner)
 Toold_id, producer_id
 
 Type  (Many to Many with tools)

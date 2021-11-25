@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_25_193127) do
+ActiveRecord::Schema.define(version: 2021_11_25_211923) do
 
   create_table "pages", force: :cascade do |t|
     t.string "title"
@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(version: 2021_11_25_193127) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "tool_types", force: :cascade do |t|
+    t.integer "tool_id", null: false
+    t.integer "type_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["tool_id"], name: "index_tool_types_on_tool_id"
+    t.index ["type_id"], name: "index_tool_types_on_type_id"
+  end
+
   create_table "tools", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -37,5 +46,13 @@ ActiveRecord::Schema.define(version: 2021_11_25_193127) do
     t.index ["producer_company_id"], name: "index_tools_on_producer_company_id"
   end
 
+  create_table "types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "tool_types", "tools"
+  add_foreign_key "tool_types", "types"
   add_foreign_key "tools", "producer_companies"
 end
