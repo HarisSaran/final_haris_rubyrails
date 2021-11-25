@@ -6,6 +6,10 @@
 <li><%= text = " Get your discount code for %100 of your first order! https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 html_text = text.gsub(URI.regexp, '<a href="\0">\0</a>').html_safe %></li>
 
+<% cms_pages.each do |page| %>
+      <li><%= link_to page.title, permalink_path(page.permalink) %> </li>
+<% end %>
+
 <%# <li><= link_to "About My Data", permalink_path('about_the_data') ></li>
 <li><= link_to "Contact", permalink_path('contact') ></li> %>
 

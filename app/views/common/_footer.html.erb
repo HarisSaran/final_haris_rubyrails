@@ -6,9 +6,10 @@
     <li><%= link_to "Tools", tools_path %></li>
     <li><%= link_to "Brands", producer_companies_path %></li>
 
-    <% cms_pages.each %>
+    <% cms_pages.each do |page| %>
+      <li><%= link_to page.title, permalink_path(page.permalink) %> </li>
 
-    <li><%= link_to "About", permalink_path("about_scott_depot") %></li>
+    <% end %>
 
 
 
