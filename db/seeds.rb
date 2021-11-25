@@ -8,6 +8,7 @@
 
 require "csv"
 
+Page.delete_all
 Tool.delete_all
 ProducerCompany.delete_all
 
@@ -38,6 +39,18 @@ tools.each do |m|
     puts "Not a valid producer company, #{m['producer']} for tool #{m['name']}"
   end
 end
+
+Page.create(
+  title:     "Contact Info",
+  content:   "If you have suggestions as how to we could improve the site and have any comments please let us know",
+  permalink: "contact"
+)
+
+Page.create(
+  title:     "About Scott Depot",
+  content:   "Scott Depot sells only the best quality tools from the best brands out there",
+  permalink: "about_scott_depot"
+)
 
 puts "created Producer Companies #{ProducerCompany.count}"
 puts "created Tools : #{Tool.count}"
