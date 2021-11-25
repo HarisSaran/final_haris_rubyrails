@@ -42,7 +42,7 @@ end
 
 Page.create(
   title:     "Contact Info",
-  content:   "If you have suggestions as how to we could improve the site and have any comments please let us know",
+  content:   "If you have suggestions how to we could improve the site and have any comments",
   permalink: "contact"
 )
 

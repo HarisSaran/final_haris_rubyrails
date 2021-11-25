@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  resources :pages
   # get 'home/index'
   # get 'tools/index'
   # get 'tools/show'
   # get 'producer_companies/index'
   # get 'producer_companies/show'
+  resources :pages, except: [:show]
+  get "pages/:permalink" => "pages#permalink", as: "permalink" # using in ruby is : permalink_path
 
   root to: "home#index"
   resources :tools, only: %i[index show]
