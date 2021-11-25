@@ -9,6 +9,8 @@
 require "csv"
 
 Page.delete_all
+ToolType.delete_all
+Type.delete_all
 Tool.delete_all
 ProducerCompany.delete_all
 
@@ -30,7 +32,19 @@ tools.each do |m|
       price:       m["price"],
       quantity:    m["amount"]
     )
-    puts "Invalid tool #{m['name']}" unless tool&.valid?
+
+    if tool&.valid?
+      types = m ["type"].split(",").map(&:strip)
+      types.each do |type_name|
+        type = Type.find_or_create_by(name: type_name)
+        ToolType.create(tool: tool, type: type)
+      end
+
+    else
+      puts "Invalid tool #{m['name']}"
+    end
+
+    # puts "Invalid tool #{m['name']}" unless tool&.valid?
 
     # name:string description:text price:decimal quantity:integer producer_company:references
     # name,type,producer,price,amount,description
@@ -54,3 +68,6 @@ Page.create(
 
 puts "created Producer Companies #{ProducerCompany.count}"
 puts "created Tools : #{Tool.count}"
+
+puts "created Types : #{Type.count}"
+puts "created Tool types : #{ToolType.count}"
