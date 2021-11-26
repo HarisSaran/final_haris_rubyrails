@@ -30,6 +30,15 @@
  <%= tool.quantity %>
  </progress>
 
+ <% if tool.image.present? %>
+ <%# <p>IMAGE!!</p> %>
+    <div class="card-image">
+      <figure class="image">
+        <%= image_tag tool.image %>
+      </figure>
+    </div>
+ <% end %>
+
  <p>
   <strong> Quantity: </strong>
   <%= tool.quantity %>
