@@ -71,3 +71,4 @@ puts "created Tools : #{Tool.count}"
 
 puts "created Types : #{Type.count}"
 puts "created Tool types : #{ToolType.count}"
+# AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

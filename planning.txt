@@ -7,7 +7,7 @@ DATA:Name,Type,Producer,Price,Amount,Description, Quantity   (Image is added thr
 Tool     rails g model Tool name:string description:text price:decimal quantity:integer producer_company:references
 id, name, description, price, quantity, producer_id,
 
-Producer_Company (1 to many)         rails g model Producer name:string
+Producer_Company (1 to many)         rails g model Producer name:string   or was it rails g model Producer name:string
 Id, name
 
 ToolType (joiner)
