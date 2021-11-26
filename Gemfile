@@ -67,3 +67,4 @@ gem 'activeadmin'
 # Plus integrations with:
 gem 'devise'
 
+gem 'image_processing'
