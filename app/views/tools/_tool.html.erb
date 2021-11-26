@@ -1,5 +1,8 @@
 
 
+
+
+
 <div class="container is-max-desktop">
         <div class="notification white-ter	">
 
@@ -38,16 +41,6 @@
 
             <% end %>
 
-
-
-
-<%# <aside>
-    <h3><%= link_to product.name, product ></h3>
-    <p>Price: <%= number_to_currency product.price_cents / 100.0 ></p>
-    <p><%= product.description ></p>
-  </aside> %>
-
-
     <p>
       <strong> Quantity: </strong>
       <%= tool.quantity %>
@@ -55,7 +48,7 @@
 
     <p>
       <strong> Price: $</strong>
-      <%= tool.price %>
+      <%= number_to_currency tool.price %>
     </p>
 
     <p>

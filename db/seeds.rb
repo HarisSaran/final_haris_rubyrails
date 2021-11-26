@@ -69,8 +69,7 @@ Page.create(
 NUMBER_OF_TYPES = 4
 TOOLS_PER_TYPE = 4
 
-# Horse.destroy_all
-# Breed.destroy_all
+
 
 NUMBER_OF_TYPES.times do
   type = Type.create(name: Faker::Creature::Horse.unique.breed)
