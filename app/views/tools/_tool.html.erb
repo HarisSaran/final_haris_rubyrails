@@ -4,41 +4,37 @@
 
 
 <div class="container is-max-desktop">
-        <div class="notification white-ter	">
-
+    <div class="notification white-ter	">
         <div class="tile is-parent">
-              <article class="tile is-child notification has-background-grey-light">
-
-      <h2 class="title is-2">
-        <% if show_link %>
-          <%= link_to tool.name, tool %>
-        <% else %>
-            <%= tool.name %>
-        <% end %>
-      </h2>
-
-
+            <article class="tile is-child notification has-background-grey-light">
+                <h2 class="title is-2">
+                  <% if show_link %>
+                    <%= link_to tool.name, tool %>
+                  <% else %>
+                      <%= tool.name %>
+                  <% end %>
+                </h2>
             <article class="message is-dark">
-              <div class="message-header has-background-warning-dark">
-              <p>Tool Description</p>
-              </div>
-              <div class="message-body">
-              <%= tool.description%>
-              </div>
+                <div class="message-header has-background-warning-dark">
+                <p>Tool Description</p>
+                </div>
+                  <div class="message-body">
+                  <%= tool.description%>
+                  </div>
             </article>
 
             <p> <strong>Quantity Remaining:</strong> <%= tool.quantity %> <strong>/150</strong> </p>
             <progress class="progress " value="<%= tool.quantity %>" max=150>
-            <p> Quantity Remaining </p>
-            <%= tool.quantity %>
+
+
+              <p> Quantity Remaining </p>
+               <%= tool.quantity %>
             </progress>
 
 
             <% if tool.image.present? %>
             <%# <p>IMAGE!!</p> %>
-
-                    <p><%= image_tag tool.image.variant(resize_to_limit: [285, 285]).processed %></p>
-
+              <p><%= image_tag tool.image.variant(resize_to_limit: [285, 285]).processed %></p>
             <% end %>
 
     <p>
@@ -55,6 +51,20 @@
       <strong> Brand: </strong>
       <%= link_to tool.producer_company.name, tool.producer_company %>
     </p>
+
+     <%# Pass the id of the product to the cart %>
+    <% if cart.include?(tool) %>
+      <%= button_to cart_path(tool), method: :delete do %>
+        Remove From Cart 😪
+    <% end %>
+    <% else %>
+      <%= form_with url: cart_index_path, method: :post do %>
+        <%= hidden_field_tag(:id, tool.id) %>
+        <%= button_tag 'Add to Cart' %>
+      <% end %>
+    <% end %>
+
+
 
       </div>
       <figure class="media-left">

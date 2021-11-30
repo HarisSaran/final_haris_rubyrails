@@ -19,12 +19,39 @@
     <section class="section box">
       <section class="section">
 
+
+      <%# Popup flash notice %>
+      <% if flash[:notice] %>
+         <p><%= flash[:notice] %></p>
+      <% end%>
+
       <div class="buttons box has-background-warning-light">
         <div class="containter">
           <h1 class="button is-dark"><%= link_to 'Home', root_path %></h1>
           <h1 class="button is-dark"><%= link_to "Shop", tools_path %></h1>
           <h1 class="button is-dark"><%= link_to "Brands", producer_companies_path %></h1>
         </div>
+
+        <%# shopping cart %>
+      <nav class="level-right">
+        <%= link_to image_tag("shopping-cart.png", width:60), root_path %>
+          <ul>
+            <li>
+              Cart
+              <% if cart.present? %>
+                <sup> <%= cart.size %><sup>
+                  <ul>
+                    <% cart.each do |tool| %>
+                      <li>
+                        <%= tool.name %> <%= link_to '➖', cart_path(tool), method: :delete %>
+                      </li>
+                    <%end%>
+                  </ul>
+              <%end%>
+            </li>
+          </ul>
+      </nav>
+
       </div>
 
       <%= yield %>
@@ -36,6 +63,7 @@
       <% end %>
 
       </section>
+
     </section>
   </body>
 </html>
