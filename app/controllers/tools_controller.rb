@@ -9,4 +9,9 @@ class ToolsController < ApplicationController
   def show
     @tool = Tool.find(params[:id])
   end
+
+  def search
+    wildcard_search = "%#{params[:keywords]}%"
+    @tools = Tool.where("name LIKE ?", wildcard_search)
+  end
 end

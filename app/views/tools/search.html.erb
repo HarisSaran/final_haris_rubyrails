@@ -1,0 +1,9 @@
+<p class="mb-5">
+  Found <%= pluralize(@tools.count, 'name') %> when searching for: <%= params[:keywords] %>
+</p>
+
+<ul>
+  <% @tools.each do |tool| %>
+    <li><%= link_to tool.name, tool %></li>
+    <% end %>
+</ul>

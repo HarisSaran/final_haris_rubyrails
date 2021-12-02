@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   get "pages/:permalink" => "pages#permalink", as: "permalink" # using in ruby is : permalink_path
 
   root to: "home#index"
-  resources :tools, only: %i[index show]
+  resources :tools, only: %i[index show] do
+    collection do
+      get "search"
+    end
+  end
   resources :producer_companies, only: %i[index show]
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
