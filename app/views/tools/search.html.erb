@@ -1,5 +1,5 @@
 <p class="mb-5">
-  Found <%= pluralize(@tools.count, 'name') %> when searching for: <%= params[:keywords] %>
+  Found <%= pluralize(@tools.count, 'name') %> when searching for: <%= params[:search_term] %>
 </p>
 
 <ul>
@@ -7,3 +7,7 @@
     <li><%= link_to tool.name, tool %></li>
     <% end %>
 </ul>
+
+
+
+

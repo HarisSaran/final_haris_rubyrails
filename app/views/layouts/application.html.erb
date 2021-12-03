@@ -31,18 +31,18 @@
           <h1 class="button is-dark"><%= link_to "Shop", tools_path %></h1>
           <h1 class="button is-dark"><%= link_to "Brands", producer_companies_path %></h1>
 
-<% if controller_name == 'tools' %>
-        <%= form_with(url: search_tools_path, method: :get, local: true) do %>
+
+        <%= form_with(url: search_tools_path, local: true, method: "get", class: 'd-flex') do %>
           <div class="field is-grouped mb-5">
             <div class="control is-expanded">
-              <%= text_field_tag(:keywords, nil, class: "input", placeholder: 'Search For Tools') %>
+              <%= text_field_tag(:search_term, nil, class: 'form-control', placeholder: 'Search Tool By Name') %>
+              <%= select_tag(:id, options_for_select(@c),{ :include_blank => "select category"}) %>
             </div>
             <div class="control">
-              <%= submit_tag("Search", class: "button is-primary") %>
+              <%= submit_tag("Search", class: "btn btn-warning") %>
             </div>
           </div>
         <% end %>
-<% end %>
 
 
         </div>

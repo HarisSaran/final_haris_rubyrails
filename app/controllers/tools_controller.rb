@@ -10,8 +10,25 @@ class ToolsController < ApplicationController
     @tool = Tool.find(params[:id])
   end
 
+  # def search
+  #   wildcard_search = "%#{params[:keywords]}%"
+  #   @tools = Tool.where("name LIKE ?", wildcard_search)
+  # end
+
   def search
-    wildcard_search = "%#{params[:keywords]}%"
-    @tools = Tool.where("name LIKE ?", wildcard_search)
+    # @tools = if !params[:id].empty?
+    #            Tool.joins(:tool_types).where(tool_types: { id: params[:id] }).where(
+    #              "name OR description LIKE ?", "%#{params[:search_term]}%"
+    #            )
+    @tools = if !params[:id].empty?
+               Tool.where("producer_company_id = #{params[:id]}").where(
+                 "name OR description LIKE ?", "%#{params[:search_term]}%"
+               )
+
+             else
+               #   wildcard_search = "%#{params[:keywords]}%"
+               # @tools = Tool.where("name LIKE ?", wildcard_search)
+               Tool.where("name OR description LIKE ?", "%#{params[:search_term]}%")
+             end
   end
 end
