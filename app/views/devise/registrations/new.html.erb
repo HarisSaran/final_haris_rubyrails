@@ -21,6 +21,18 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+  <div class="field">
+    <%= f.label :Address %><br />
+    <%= f.text_field :shipping_address%>
+    </div>
+    <div class="field">
+    <%= f.label :Province %><br />
+    <%= f.select(:province_id,[['Manitoba',1],['Saskatchewan',2],['Alberta',3],['British Columbia',4],['Ontario',5],['Quebec',6],['Prince Edward Istland',7]])%>
+  </div>
+  <%# ,['Alberta',2],['British Columbia',3] %>
+
+  <%# ['Manitoba',1],['Alberta',2],['British Columbia',3] %>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

@@ -4,6 +4,15 @@
 <%# <%= render @tools %>
 <%# <%= will_paginate @tools %>
 
+<%= @users.each do |user| %>
+<li><%= user.province.name %> </li>
+<%end%>
+
+ <% @tools.each do |tool| %>
+    <li><%= link_to tool.name, tool %></li>
+    <% end %>
+
+
 <%= paginate @tools %>
 <%= render partial: @tools, locals: {show_link: true} %>
 

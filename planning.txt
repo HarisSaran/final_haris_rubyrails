@@ -16,8 +16,10 @@ Toold_id, producer_id
 Type  (Many to Many with tools)
 Id, name (eg concrete, wood, exetra..)
 
+Province rails g model Province name:string gst:float pst:float hst:float
+id, name, gst, pst, hst,    province_id
 
-
+devise
 
 
 purchase

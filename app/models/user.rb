@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   # resources :users, only: %i[show edit update]
+  belongs_to :province
 end

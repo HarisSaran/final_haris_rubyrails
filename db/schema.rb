@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_03_183247) do
+ActiveRecord::Schema.define(version: 2021_12_03_214059) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -80,6 +80,15 @@ ActiveRecord::Schema.define(version: 2021_12_03_183247) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "provinces", force: :cascade do |t|
+    t.string "name"
+    t.float "gst"
+    t.float "pst"
+    t.float "hst"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "tool_types", force: :cascade do |t|
     t.integer "tool_id", null: false
     t.integer "type_id", null: false
@@ -114,6 +123,7 @@ ActiveRecord::Schema.define(version: 2021_12_03_183247) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "province_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -123,4 +133,5 @@ ActiveRecord::Schema.define(version: 2021_12_03_183247) do
   add_foreign_key "tool_types", "tools"
   add_foreign_key "tool_types", "types"
   add_foreign_key "tools", "producer_companies"
+  add_foreign_key "users", "provinces", primary_key: "id"
 end
